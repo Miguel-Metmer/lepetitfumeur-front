@@ -9,7 +9,7 @@ class Init
            container : ".grid",
            trueOrder : true,
            columns : 3,
-           margin : 24,
+           margin : 30,
            breakAt : {
                 1334 : 2,
                 924 : 1
