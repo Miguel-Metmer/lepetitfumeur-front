@@ -24,14 +24,14 @@ html, body
 .grid
 {
    
-    width: 60%;
+    width: 50%;
     margin: auto;
 }
 
 .grid .article
 {
     margin: 0;
-    margin-top: 35%;
+    margin-top: 45%;
 }
 
 .grid .article img
@@ -42,7 +42,7 @@ html, body
     border-bottom-right-radius: 50% 2%;
 }
 
-.grid .article figcaption
+/* .grid .article figcaption
 {
     width: 100%;
     background-color: white;
@@ -60,7 +60,7 @@ html, body
     display: flex;
     padding: 5% 0;
     animation: beautify 1s normal forwards; 
-}  
+}   */
 
 .informations
 {
@@ -132,44 +132,98 @@ html, body
     }
 }
 
-@media all and (max-width:525px)
-{
-    .grid figure figcaption h5
-    {
-        color: rgb(195, 201, 201);
-        margin: 0;
-        padding-top: 8%;
-        padding-left: 10%;
-        font-size: x-small;
-    }
 
+@media all and (min-width: 1440px) and (max-width: 1840px)
+{
     .grid figure figcaption h3
     {
-        margin: 0;
-        padding-top: 2%;
-        padding-left: 10%;
-        padding-bottom: 8%;
+        font-size: small;
+    }
+
+    .grid figure figcaption h5
+    {
         font-size: x-small;
     }
 }
 
-@media all and (max-width:350px)
+@media all and (max-width: 1440px)
 {
-    .grid figure figcaption h5
+    .grid .article figcaption
     {
-        color: rgb(195, 201, 201);
-        margin: 0;
-        padding-top: 8%;
-        padding-left: 10%;
-        font-size: xx-small;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }  
+
+    .informations
+    {
+        width: 75%;
+        margin: auto;
     }
 
     .grid figure figcaption h3
     {
-        margin: 0;
-        padding-top: 2%;
-        padding-left: 10%;
-        padding-bottom: 8%;
-        font-size: xx-small;
+        text-align: center;
+        padding: 0;
     }
+
+    .grid figure figcaption h5
+    {
+        text-align: center;
+        padding: 0;
+    }
+
+    .buttons
+    {
+        display: flex;
+        justify-content: space-between;
+        width: 75%;
+        margin: auto;
+        margin-top: 5%;
+    }
+
+    .buttons > button:nth-child(1)
+    {
+        margin: 0;
+        width: 45%;
+    }
+
+    .buttons > button:nth-child(2)
+    {
+        margin: 0;
+        width: 45%;
+    }
+
+    .grid .article figcaption
+    {
+        width: 100%;
+        background-color: white;
+        margin: 0;
+        display: flex;
+        padding: 5% 0;
+    }  
+}
+
+@media all and (min-width : 1440px)
+{
+    .grid .article figcaption
+    {
+        width: 100%;
+        background-color: white;
+        margin: 0;
+        display: flex;
+        padding: 5% 0;
+        display: none;
+    }  
+
+    .grid .article:hover figcaption
+    {
+        width: 100%;
+        background-color: white;
+        margin: 0;
+        display: flex;
+        padding: 5% 0;
+        animation: beautify 1s normal forwards; 
+    }  
 }

@@ -11,7 +11,7 @@ class Init
            columns : 3,
            margin : 24,
            breakAt : {
-                1024 : 2,
+                1440 : 2,
                 768 : 1
            }
        })
