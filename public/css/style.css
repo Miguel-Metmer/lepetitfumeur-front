@@ -19,48 +19,50 @@ html, body
     border-bottom-right-radius: 50% 10%;
     display: block;
     position: absolute;
+    border-radius: 0 0 10% 10%;
 }
 
 .grid
 {
-   
     width: 50%;
     margin: auto;
 }
 
-.grid .article
+.grid figure
 {
-    margin: 0;
-    margin-top: 45%;
+    margin: 30% 0;
+    overflow: hidden;
 }
 
-.grid .article img
+.grid figure figcaption
+{
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    padding: 5% 0;
+    visibility: hidden;
+    clip-path: polygon(0 0, 25% 3%, 50% 5%, 75% 3%, 100% 0, 100% 100%, 0 100%);
+}
+
+.grid figure:hover img
+{
+    animation: zoom 1s forwards;
+}
+
+.grid figure:hover figcaption
+{
+    visibility: visible;
+    animation: beautify 1s forwards;
+}
+
+.grid figure img
 {
     width: 100%;
     display: block;
-    border-bottom-left-radius: 50% 2%;
-    border-bottom-right-radius: 50% 2%;
+    border-radius: 5px;
 }
-
-/* .grid .article figcaption
-{
-    width: 100%;
-    background-color: white;
-    margin: 0;
-    display: flex;
-    padding: 5% 0;
-    display: none;
-}  
-
-.grid .article:hover figcaption
-{
-    width: 100%;
-    background-color: white;
-    margin: 0;
-    display: flex;
-    padding: 5% 0;
-    animation: beautify 1s normal forwards; 
-}   */
 
 .informations
 {
@@ -107,6 +109,7 @@ html, body
     margin: 0;
     padding-top: 8%;
     padding-left: 10%;
+    font-size: 0.6em;
 }
 
 .grid figure figcaption h3
@@ -115,6 +118,7 @@ html, body
     padding-top: 2%;
     padding-left: 10%;
     padding-bottom: 8%;
+    font-size: 0.9em;
 }
 
 @keyframes beautify
@@ -132,98 +136,82 @@ html, body
     }
 }
 
-
-@media all and (min-width: 1440px) and (max-width: 1840px)
+@keyframes zoom
 {
-    .grid figure figcaption h3
+    0%
     {
-        font-size: small;
+        transform: scale(1.0);
     }
-
-    .grid figure figcaption h5
+    100%
     {
-        font-size: x-small;
+        transform: scale(1.1);
     }
 }
 
-@media all and (max-width: 1440px)
+@media all and (min-width: 1920px)
 {
-    .grid .article figcaption
+    .grid figure figcaption h5
     {
+        color: rgb(195, 201, 201);
+        margin: 0;
+        padding-top: 8%;
+        padding-left: 10%;
+        font-size: 0.8em;
+    }
+
+    .grid figure figcaption h3
+    {
+        margin: 0;
+        padding-top: 2%;
+        padding-left: 10%;
+        padding-bottom: 8%;
+        font-size: 1.0em;
+    }
+}
+
+
+@media all and (max-width: 924px)
+{
+    .grid figure figcaption
+    {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        width: 100%;
-        justify-content: center;
-    }  
-
-    .informations
-    {
-        width: 75%;
-        margin: auto;
     }
 
-    .grid figure figcaption h3
+    .grid figure figcaption .informations
     {
+        width: 100%;
         text-align: center;
-        padding: 0;
     }
 
     .grid figure figcaption h5
     {
-        text-align: center;
         padding: 0;
     }
 
-    .buttons
+    .grid figure figcaption h3
     {
+        padding: 2% 0; 
+    }
+
+    .grid figure figcaption .buttons
+    {
+        width: 90%;
+        margin: auto;
         display: flex;
         justify-content: space-between;
-        width: 75%;
-        margin: auto;
-        margin-top: 5%;
     }
 
-    .buttons > button:nth-child(1)
+    .grid figure figcaption .buttons > button:nth-child(1)
     {
         margin: 0;
         width: 45%;
     }
 
-    .buttons > button:nth-child(2)
+    .grid figure figcaption .buttons > button:nth-child(2)
     {
         margin: 0;
         width: 45%;
     }
-
-    .grid .article figcaption
-    {
-        width: 100%;
-        background-color: white;
-        margin: 0;
-        display: flex;
-        padding: 5% 0;
-    }  
-}
-
-@media all and (min-width : 1440px)
-{
-    .grid .article figcaption
-    {
-        width: 100%;
-        background-color: white;
-        margin: 0;
-        display: flex;
-        padding: 5% 0;
-        display: none;
-    }  
-
-    .grid .article:hover figcaption
-    {
-        width: 100%;
-        background-color: white;
-        margin: 0;
-        display: flex;
-        padding: 5% 0;
-        animation: beautify 1s normal forwards; 
-    }  
 }
